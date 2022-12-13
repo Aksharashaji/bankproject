@@ -1,0 +1,25 @@
+<div class="container mt-5" *ngIf="item && !serverMsg">
+    <div class="row text-center">
+        <div class="col-3"></div>
+        <div class="col-6 border p-5 rounded">
+
+            <div class="h4">
+          Are you sure ,Do you want to delete your account{{item}}?
+            </div>
+            <button (click)="deleteChild()" class="btn btn-danger">Yes</button> &nbsp;
+            <button (click)="cancel()" class="btn btn-warning">No</button> 
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+
+<!-- delete  popup-->
+<div class="container m-5" *ngIf="!item && serverMsg">
+    <div class="row">
+        <div class="col">
+<img class="w-25 d-block m-auto" src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif" alt="no image">
+      <h4 class="text-danger text-center">Please wait....your accounting is deleting</h4>
+</div>
+    </div>
+</div> 

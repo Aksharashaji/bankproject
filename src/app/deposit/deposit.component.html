@@ -1,0 +1,187 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <div class="col-lg-10">
+            <a class="navbar-brand" routerLink="/dashboard">
+                <i class="fa-sharp fa-solid fa-building-columns text-primary"></i>
+                &nbsp;<span class="title">Online Banking</span>
+              </a>
+        </div>
+        <!-- <i class=" fa-solid fa-building-columns "></i> -->
+        <!-- <a class="navbar-brand" href="#">Online bank</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li> -->
+                <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        services
+                    </a>
+                    <ul class="dropdown-menu">
+                    
+                        <li><a class="dropdown-item" routerLink="/withdraw">Withdraw</a></li>
+                        <li><a class="dropdown-item" routerLink="">Balance Enquiry </a></li> -->
+                        <!-- <li><a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                          Balance Enquiry
+                        </a></li>
+                        
+                        <li><a class="dropdown-item" routerLink="#">transaction history</a></li> -->
+
+                        <!-- <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-sharp fa-solid fa-trash"></i> Delete account </a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Signout  <i class="fa-solid fa-right-from-bracket"></i> </a></li> -->
+
+                    <!-- </ul>
+                </li> --> 
+                <!-- <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li> -->
+            </ul>
+
+            <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-5">
+    <h1 class="text-center text-primary">Deposit Form</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eligendi, natus ipsa nemo necessitatibus
+      consequuntur velit excepturi maxime error debitis inventore sit quae sapiente sunt saepe molestiae fuga dolorum
+      quas! Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium iusto distinctio quos, odit eius quo
+      ducimus fugiat eum ad sint iste officiis libero commodi saepe porro suscipit. Quos, eos est! Lorem ipsum dolor sit
+      amet consectetur adipisicing elit. Vel placeat dolor facilis, velit exercitationem temporibus suscipit optio nihil
+      quidem esse quod magnam expedita est magni, laborum perferendis at rerum minus? Lorem ipsum dolor sit amet
+      consectetur, adipisicing elit. Ducimus saepe debitis dignissimos, eligendi ipsam tenetur possimus eos autem
+      explicabo non aspernatur molestias quia sint veniam totam blanditiis? Itaque, autem quas.
+    </p>
+  
+    <div class="row">
+      <div class="col-4 text-center">
+        <img width="300px" src="https://th.bing.com/th/id/OIP.ikLdhvER0uiUQCpIBbipxQHaFx?w=270&h=210&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+          alt="no image">
+          <br>
+     
+  <a routerLink="/dashboard" class="btn btn-primary mt-3">
+    <i class="fa-sharp fa-solid fa-hand-back-point-left"></i>
+     Back
+  </a>
+  </div>
+  
+      <div class="col-8">
+        <form (ngSubmit)="deposit()" [formGroup]="depositForm" class="border p-5">
+        <!-- <div class="form-floating mb-3">
+          
+          <input formControlName="username" name="username" type="text" class="form-control" id="floatingInput" placeholder="username please">
+          <label for="floatingInput">User Name</label>
+        </div>
+        username  validation -structural directive ngIf --> 
+        <!-- <div *ngIf="this.registerForm.get('username')?.errors&&this.registerForm.get('username')?.touched" class="text-danger">
+          invalid username
+  
+      </div> -->
+  
+        <div class="form-floating mb-3">
+          <input formControlName="acno" name="acno" type="text" class="form-control" id="floatingPassword" placeholder="Account Number please">
+          <label for="floatingPassword">Account Number</label>
+        </div>
+        <!-- Account Number  validation -structural directive ngIf --> 
+        <div *ngIf="this.depositForm.get('acno')?.errors&&this.depositForm.get('acno')?.touched" class="text-danger">
+          invalid Account Number
+  
+      </div>
+        <div class="form-floating mb-3">
+          <input  formControlName="pswd" name="pswd" type="password" class="form-control" id="floatingPassword" placeholder="password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <!-- account number validation -structural directive ngIf --> 
+        <div *ngIf="this.depositForm.get('pswd')?.errors&&this.depositForm.get('pswd')?.touched" class="text-danger">
+          invalid Password
+  
+      </div>
+      <div class="form-floating mb-3">
+        <input  formControlName="amount" name="amount" type="amount" class="form-control" id="floatingPassword" placeholder="Amount">
+        <label for="floatingPassword">Amount</label>
+      </div>
+      <!-- account number validation -structural directive ngIf --> 
+      <div *ngIf="this.depositForm.get('amount')?.errors&&this.depositForm.get('amount')?.touched" class="text-danger">
+        invalid Password
+
+    </div>
+
+  <!-- server response -->
+  <div class="text-danger">
+    <b>{{eMsg}}</b>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">
+    Deposit
+  </button>
+      
+     </form>
+    </div>
+    </div>
+  </div>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Account statement</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+     <img src="https://th.bing.com/th/id/R.f399894c9786ac6958b34f6750b08fa1?rik=282QTuDZV9tzPg&riu=http%3a%2f%2finfomultiverse.com%2fwp-content%2fuploads%2fBalanceEnq512x512-512x372.png&ehk=7HljdpJCHV%2fEDkwWim0uIwcGxXzDmbeoBnIJaJkp0WQ%3d&risl=&pid=ImgRaw&r=0" alt="">      </div>
+
+     <p>hi {{user}} ,
+        <br>
+     <span> {{balance}}
+     </span></p>
+      <!-- <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div> -->
+    </div>
+  </div>

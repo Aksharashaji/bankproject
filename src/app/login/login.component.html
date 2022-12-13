@@ -1,0 +1,43 @@
+<div class="row">
+    <div  class="col-6 text-center">
+     <img class="mt-5" src="https://th.bing.com/th/id/OIP.US9lANuFiFFGFtoYMHxkdgHaEz?w=256&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="no image">
+    </div>
+    <div class="col-6">
+        <form (ngSubmit)="login()" [formGroup]="loginForm" style="margin-top: 150px;" class="m-5 p-3 border" >
+            <div class="mb-3">
+                <label for="acno">Account number</label>
+                <input formControlName="acno" name="acno" id="acno" type="text" placeholder="Account number " class="form-control">
+            </div>
+
+            <!-- account number validation -structural directive ngIf --> 
+             <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="text-danger">
+                invalid account number
+
+            </div>
+            <div class="mb-3">
+                <label for="pswd">password</label>
+                <input formControlName="pswd" name="pswd" id="pswd" type="password" placeholder="password please " class="form-control">
+            </div>
+            <div *ngIf="this.loginForm.get('pswd')?.errors&&this.loginForm.get('pswd')?.touched" class="text-danger">
+                invalid password
+
+            </div>
+            <div  style="color:red ;" > <b>{{eMsg}}</b> </div>
+
+
+            <div class="mb-3">
+                <button *ngIf="!msg" type="submit" class="btn btn-primary">login</button> &nbsp;
+                <!-- bootstrap spinner code -->
+                <button *ngIf="msg" class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                  </button>
+
+                <span>New user? click here to <a routerLink="register">Register</a></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+ 
